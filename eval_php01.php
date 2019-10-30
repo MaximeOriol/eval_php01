@@ -1,4 +1,6 @@
-Evaluation PHP 01
+<?php
+
+/* Evaluation PHP 01
 
 Consignes: respecter les coding standards PSR-1 et PSR-12
 Faire un fork du repo d'origine
@@ -17,6 +19,18 @@ isVoyelle($lettre) : boolean
 Tester votre fonction avec les paramètres suivants:
 'a', 'b', 'c', 'A', 'E', true, false, 0, 1, 2 et 'bonjour'
 
+
+function isVoyelle($resultat)
+{   
+        if (($resultat == "a") || ($resultat == "e") || ($resultat == "i") || ($resultat == "o") || ($resultat == "u") 
+           || ($resultat == "A") || ($resultat == "E") || ($resultat == "I") || ($resultat == "O") || ($resultat == "U")){
+      echo "It's true";
+   } else {
+         echo "It's false";  
+   }
+}
+      
+
 2 - écrire une fonction qui supprime les voyelles d'une chaine de caractère.
 La fonction retourne la chaine d'origine sans les voyelles.
 Utiliser la fonction isVoyelle() écrite précédement.
@@ -25,7 +39,19 @@ prototype de la fonction:
 supprimerVoyelles($chaine) : string
 Tester votre fonction avec les paramètres suivants:
 'bonjour', 'hello world', 'eau', 0, 1, 2, 42, true, false
+*/
 
+function isVoyelle($voyelle, $resultat, $phrase)
+{
+if ($vowels = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")) {
+   $resultat = str_replace($voyelle, "",$phrase); 
+   echo $resultat;
+} else {
+      echo "erreur";
+      }
+}
+
+/*
 3 - Généralisation des fonctions précédentes: écrire une fonction
 qui supprime les lettres passées en paramètres dans
 une chaine passée en paramètre.
@@ -43,7 +69,10 @@ tester votre fonction avec les paramètres suivants pour la chaine:
 et les paramètres suivants pour les lettres à supprimer:
 '0123', 'eau' et 'hlwrd'
 Tester toutes les combinaisons de paramètres possibles.
+*/
 
+/*
 4 - Ré-écrire la fonction supprimerVoyelles() en utilisant les fonctions
 écrites dans le point 3.
 Conserver la version précédente de la fonction supprimerVoyelles() pour correction
+*/
