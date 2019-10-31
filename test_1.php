@@ -1,50 +1,25 @@
 <?php
-require_once("eval_php01.php");
-/*
-$resultat = "a";
-isVoyelle($resultat);
-echo "\n";
 
-$resultat = "b";
-isVoyelle($resultat);
-echo "\n";
+require_once("fonctions_eval.php");
 
-$resultat = "c";
-isVoyelle($resultat);
-echo "\n";
+testvoyelle("a");
 
-$resultat = "A";
-isVoyelle($resultat);
-echo "\n";
+testvoyelle("b");
 
-$resultat = "E";
-isVoyelle($resultat);
-echo "\n";
+testvoyelle("c");
 
-$resultat = true;
-isVoyelle($resultat);
-echo "\n";
+testvoyelle("A");
 
-$resultat = false;
-isVoyelle($resultat);
-echo "\n";
+testvoyelle("E");
 
-$resultat = 0;
-isVoyelle($resultat);
-echo "\n";
+testvoyelle(true);
 
-$resultat = 1;
-isVoyelle($resultat);
-echo "\n";
+testvoyelle(false);
 
-$resultat = 2;
-isVoyelle($resultat);
-echo "\n";
+testvoyelle(0);
 
-$resultat = "bonjour";
-isVoyelle($resultat);
-echo "\n";
-*/
+testvoyelle(1);
 
-$phrase = "bonjour";
-isVoyelle($voyelle,$resultat,$phrase);
+testvoyelle(2);
+
+testvoyelle("bonjour");

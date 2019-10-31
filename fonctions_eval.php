@@ -18,38 +18,75 @@ isVoyelle($lettre) : boolean
 
 Tester votre fonction avec les paramètres suivants:
 'a', 'b', 'c', 'A', 'E', true, false, 0, 1, 2 et 'bonjour'
+*/
 
-
-function isVoyelle($resultat)
-{   
-        if (($resultat == "a") || ($resultat == "e") || ($resultat == "i") || ($resultat == "o") || ($resultat == "u") 
-           || ($resultat == "A") || ($resultat == "E") || ($resultat == "I") || ($resultat == "O") || ($resultat == "U")){
-      echo "It's true";
-   } else {
-         echo "It's false";  
+function isVoyelle($lettre)
+{
+  $voyelle = false;
+ 
+  if (is_string($lettre) && (strlen($lettre)==1)) {
+    $lettre = strtoupper($lettre);
+   
+    if (
+       ($lettre == "A") ||
+       ($lettre == "E") ||
+       ($lettre == "I") ||
+       ($lettre == "O") ||
+       ($lettre == "U") ||
+       ($lettre == "Y") 
+   ) {
+  $voyelle = true;
    }
+ } else {
+  echo ("erreur\n");
+ }
+  return($voyelle);
+}
+
+function testvoyelle($lettre)
+{
+  if (isVoyelle($lettre)) {
+      echo "$lettre est une voyelle\n";
+  } else {
+        echo "$lettre Ce n'est pas une voyelle\n";
+  }
+  
 }
       
-
+/*
 2 - écrire une fonction qui supprime les voyelles d'une chaine de caractère.
 La fonction retourne la chaine d'origine sans les voyelles.
 Utiliser la fonction isVoyelle() écrite précédement.
-
 prototype de la fonction:
 supprimerVoyelles($chaine) : string
 Tester votre fonction avec les paramètres suivants:
 'bonjour', 'hello world', 'eau', 0, 1, 2, 42, true, false
 */
 
-function isVoyelle($voyelle, $resultat, $phrase)
+function supprimervoyelle($chaine)
 {
-if ($vowels = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U")) {
-   $resultat = str_replace($voyelle, "",$phrase); 
-   echo $resultat;
-} else {
-      echo "erreur";
-      }
+$chaine_retour = false;
+
+  if (is_string($chaine)) {
+    $chaine = strtoupper($lettre);
+  }
+   
+    if (
+       ($chaine == "A") ||
+       ($chaine == "E") ||
+       ($chaine == "I") ||
+       ($chaine == "O") ||
+       ($chaine == "U") ||
+       ($chaine == "Y") 
+    ) {
+    $chaine_retour = "";
+    }
+
+
+
+  return $chaine_retour;
 }
+
 
 /*
 3 - Généralisation des fonctions précédentes: écrire une fonction
@@ -69,9 +106,9 @@ tester votre fonction avec les paramètres suivants pour la chaine:
 et les paramètres suivants pour les lettres à supprimer:
 '0123', 'eau' et 'hlwrd'
 Tester toutes les combinaisons de paramètres possibles.
-*/
 
-/*
+
+
 4 - Ré-écrire la fonction supprimerVoyelles() en utilisant les fonctions
 écrites dans le point 3.
 Conserver la version précédente de la fonction supprimerVoyelles() pour correction
